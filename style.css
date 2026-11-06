@@ -1,0 +1,581 @@
+/* ========== 1. COLORS AND BASICS ========== */
+:root {
+  --blue: #2563eb;
+  --blue-light: #eff4ff;
+  --bg: #f4f6f9;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --green: #16a34a;
+  --red: #dc2626;
+  --amber: #d97706;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg);
+  display: flex;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* ========== 2. SIDEBAR ========== */
+.sidebar {
+  width: 210px;
+  background: white;
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  flex-shrink: 0;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.brand-icon {
+  background: var(--blue);
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+}
+
+#nav a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+#nav a:hover {
+  background: var(--bg);
+}
+
+#nav a.active {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+/* ========== 3. MAIN AREA AND TOP BAR ========== */
+.main {
+  flex: 1;
+  padding: 22px 28px 40px;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.topbar h1 {
+  font-size: 20px;
+}
+
+.topbar p {
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ========== 4. CARDS, STATS, GRIDS ========== */
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.card .sub {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.stats .card {
+  margin: 0;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stat b {
+  display: block;
+  font-size: 26px;
+  margin: 4px 0;
+}
+
+.stat small {
+  font-size: 11px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.two-col>div .card:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== 5. BUTTONS, FORMS, TOOLBAR ========== */
+.btn {
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn.light {
+  background: white;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn.red {
+  background: var(--red);
+}
+
+.btn.sm {
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.toolbar input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.row-end {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--blue-light);
+  border-color: var(--blue);
+}
+
+.toolbar select {
+  width: auto;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* ========== 6. TABLES AND BADGES ========== */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 11px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #f0f1f3;
+  vertical-align: middle;
+}
+
+td small {
+  display: block;
+  color: var(--muted);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.g {
+  background: #dcfce7;
+  color: var(--green);
+}
+
+.r {
+  background: #fee2e2;
+  color: var(--red);
+}
+
+.a {
+  background: #fef3c7;
+  color: var(--amber);
+}
+
+.b {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+.x {
+  background: #f3f4f6;
+  color: var(--muted);
+}
+
+.link {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.red-text {
+  color: var(--red);
+}
+
+.green-text {
+  color: var(--green);
+}
+
+/* ========== 7. LISTS, TABS, DETAIL HEADER ========== */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f1f3;
+  gap: 8px;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item small {
+  display: block;
+  color: var(--muted);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.person .avatar {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+.tabs {
+  display: flex;
+  gap: 18px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.tabs a {
+  padding: 8px 0;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.tabs a.active {
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+}
+
+.back {
+  color: var(--blue);
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.detail-head {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.detail-head .avatar {
+  width: 44px;
+  height: 44px;
+  font-size: 14px;
+}
+
+.mini-stats {
+  display: flex;
+  gap: 40px;
+}
+
+.mini-stats b {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.mini-stats span {
+  color: var(--muted);
+}
+
+/* ========== 8. REPORTS CHARTS ========== */
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 22px;
+  height: 160px;
+  padding: 10px 0;
+}
+
+.bar-group {
+  flex: 1;
+  text-align: center;
+}
+
+.bar-pair {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 130px;
+}
+
+.bar-pair i {
+  width: 16px;
+  border-radius: 4px 4px 0 0;
+  background: var(--blue);
+  display: block;
+}
+
+.bar-pair i.light {
+  background: #93b4f8;
+}
+
+.hbar {
+  margin: 10px 0;
+}
+
+.hbar div {
+  height: 8px;
+  background: var(--blue);
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.hbar span {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ========== 9. SETTINGS TOGGLES ========== */
+.setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f1f3;
+  gap: 12px;
+}
+
+.setting input[type=checkbox] {
+  width: 36px;
+  height: 20px;
+  accent-color: var(--blue);
+}
+
+/* ========== 10. POP-UP ========== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 20;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  width: min(520px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-box h3 {
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+/* ========== 11. TABLET AND MOBILE ========== */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    overflow-x: auto;
+  }
+
+  .brand {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  #nav {
+    display: flex;
+    gap: 4px;
+  }
+
+  #nav a {
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  .main {
+    padding: 16px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .two-col,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-stats {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+}

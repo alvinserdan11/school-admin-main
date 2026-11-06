@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SchoolAdmin – Equipment Loans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">&#9635;</span> SchoolAdmin</div>
+    <nav id="nav">
+      <a data-page="dashboard" onclick="go('dashboard')">&#127968; Dashboard</a>
+      <a data-page="equipment" onclick="go('equipment')">&#128230; Equipment</a>
+      <a data-page="students" onclick="go('students')">&#127891; Students</a>
+      <a data-page="reports" onclick="go('reports')">&#128202; Reports</a>
+      <a data-page="penalties" onclick="go('penalties')">&#9888;&#65039; Penalties</a>
+      <a data-page="settings" onclick="go('settings')">&#9881;&#65039; Settings</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1 id="pageTitle">Dashboard</h1>
+        <p id="pageSub"></p>
+      </div>
+      <div class="user"><span class="bell">&#128276;</span><span class="avatar">JD</span> John Doe</div>
+    </header>
+
+    <div id="page"></div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box" id="modalBox"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
